@@ -1,4 +1,8 @@
 #!/bin/bash
+#Script criado por Abner Klug
+#Última atualização: 24/08/2020
+
+
 cd /tmp
 wget wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
 dpkg -i zabbix-release_5.0-1+focal_all.deb
