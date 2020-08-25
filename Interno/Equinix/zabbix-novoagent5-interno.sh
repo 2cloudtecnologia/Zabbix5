@@ -22,3 +22,9 @@ read hostname
   cat /etc/zabbix/zabbix_agentd.conf | grep Server=
   cat /etc/zabbix/zabbix_agentd.conf | grep ServerActive=
   tail -f /var/log/zabbix/zabbix_agentd.log
+
+
+
+
+
+#teste
