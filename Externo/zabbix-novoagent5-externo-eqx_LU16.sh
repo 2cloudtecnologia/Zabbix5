@@ -5,8 +5,8 @@ dpkg -i zabbix-release_5.0-1+xenial_all.deb
 apt update
 apt-get -o Dpkg::Options::="--force-confnew" install zabbix-agent
 cd /etc/zabbix/zabbix_agentd.d
-rm 2cloud*.conf
 wget https://raw.githubusercontent.com/2cloudtecnologia/Zabbix5/master/conf/2cloud.conf
+rm 2cloud-4.conf
 echo Insira o hostname do agent:
 read hostname
   sed -i "s/Hostname=Zabbix server/Hostname=$hostname/g" /etc/zabbix/zabbix_agentd.conf
