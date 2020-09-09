@@ -1,25 +1,18 @@
 #!/bin/bash
-#Script criado por Abner Klug
-#Última atualização: 24/08/2020
-
-
 cd /tmp
-wget wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
+wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
 dpkg -i zabbix-release_5.0-1+focal_all.deb
 apt update
 mkdir /home/scripts
 chown zabbix:zabbix -R /home/scripts
 chmod 744 -R /home/scripts
 cd /home/scripts
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Top%205%20processos%20utilizando%20CPU%20e%20RAM%20em%20Linux/Scripts/discovertop5cpu.sh
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Top%205%20processos%20utilizando%20CPU%20e%20RAM%20em%20Linux/Scripts/discovertop5memory.sh
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Top%205%20processos%20utilizando%20CPU%20e%20RAM%20em%20Linux/Scripts/sessions.sh
+wget https://raw.githubusercontent.com/2cloudtecnologia/Zabbix5/master/Scripts/sessions.sh
 apt install -y zabbix-agent
 chmod 744 *
 chown zabbix:zabbix *
 cd /etc/zabbix/zabbix_agentd.d
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Top%205%20processos%20utilizando%20CPU%20e%20RAM%20em%20Linux/zabbix_agentd.d/2cloud.conf
-wget https://raw.githubusercontent.com/abnerfk/Scripts-Zabbix/master/Top%205%20processos%20utilizando%20CPU%20e%20RAM%20em%20Linux/zabbix_agentd.d/monitoring_cpu_memory_process.conf
+wget https://raw.githubusercontent.com/2cloudtecnologia/Zabbix5/master/Confs/2cloud.conf
 echo Insira o hostname do agent:
 read hostname
   sed -i "s/Hostname=Zabbix server/Hostname=$hostname/g" /etc/zabbix/zabbix_agentd.conf
