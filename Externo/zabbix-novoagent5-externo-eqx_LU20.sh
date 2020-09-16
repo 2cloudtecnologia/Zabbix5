@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /tmp
-wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+bionic_all.deb
-dpkg -i zabbix-release_5.0-1+bionic_all.deb
+wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
+dpkg -i zabbix-release_5.0-1+focal_all.deb
 apt update
 apt-get -o Dpkg::Options::="--force-confnew" install zabbix-agent
 cd /etc/zabbix/zabbix_agentd.d
