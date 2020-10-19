@@ -1,5 +1,6 @@
 #!/bin/bash
-rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/6/x86_64/zabbix-release-5.0-1.el6.noarch.rpm
+wget https://repo.zabbix.com/zabbix/5.0/rhel/6/x86_64/zabbix-release-5.0-1.el6.noarch.rpm
+rpm -i zabbix-release-5.0-1.el6.noarch.rpm --force
 yum clean all
 cd /etc/zabbix
 rm -rf zabbix_agentd.conf
