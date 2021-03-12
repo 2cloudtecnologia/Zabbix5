@@ -16,8 +16,8 @@ wget https://raw.githubusercontent.com/2cloudtecnologia/Zabbix5/master/Confs/2cl
 echo Insira o hostname do agent:
 read hostname
   sed -i "s/Hostname=Zabbix server/Hostname=$hostname/g" /etc/zabbix/zabbix_agentd.conf
-  sed -i 's/Server=127.0.0.1/Server=192.168.1.117/g' /etc/zabbix/zabbix_agentd.conf
-  sed -i 's/ServerActive=127.0.0.1/ServerActive=192.168.1.117/g' /etc/zabbix/zabbix_agentd.conf
+  sed -i 's/Server=127.0.0.1/Server=192.168.1.132/g' /etc/zabbix/zabbix_agentd.conf
+  sed -i 's/ServerActive=127.0.0.1/ServerActive=192.168.1.132/g' /etc/zabbix/zabbix_agentd.conf
   sed -i 's/# HostMetadata=/HostMetadata=2cloud,equinix,interno,linux,ubuntu/g' /etc/zabbix/zabbix_agentd.conf
   echo "zabbix	ALL=(ALL)	NOPASSWD: ALL" >> /etc/sudoers
   service zabbix-agent restart
