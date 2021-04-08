@@ -3,7 +3,7 @@ cd /tmp
 wget https://repo.zabbix.com/zabbix/5.0/debian/pool/main/z/zabbix-release/zabbix-release_5.0-1+buster_all.deb
 dpkg -i zabbix-release_5.0-1+buster_all.deb
 apt update
-apt-get install zabbix-agent
+apt-get install zabbix-agent -y
 cd /etc/zabbix/zabbix_agentd.d
 rm -rf 2cloud*
 wget https://raw.githubusercontent.com/2cloudtecnologia/Zabbix5/master/Confs/2cloud.conf
