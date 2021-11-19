@@ -4,7 +4,7 @@ wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix
 dpkg -i zabbix-release_5.0-1+$(lsb_release -sc)_all.deb
 apt update
 apt-get -o Dpkg::Options::="--force-confnew" install zabbix-agent
-if [[ ! -e $dir ]]; then
+if [[ ! -e /home/scripts ]]; then
   mkdir /home/scripts
   chown zabbix:zabbix -R /home/scripts
   chmod 744 -R /home/scripts
