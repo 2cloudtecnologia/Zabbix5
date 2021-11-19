@@ -14,7 +14,9 @@ wget https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/s
 chmod 744 *
 chown zabbix:zabbix *
 cd /etc/zabbix/zabbix_agentd.d
-wget https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/2cloud.conf
+if [[ ! -f 2cloud.conf ]]; then
+  wget https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/2cloud.conf
+fi
 read -p "Tecle enter se o servidor for zabbix.2cloud.com.br, ou insira o IP/FQDN do proxy: `echo $'\n> '`" choice
 if [[ -z $choice ]]; then
   server="zabbix.2cloud.com.br"
