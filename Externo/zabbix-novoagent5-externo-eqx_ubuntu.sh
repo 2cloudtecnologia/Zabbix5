@@ -4,20 +4,9 @@ wget --no-check-certificate https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/
 dpkg -i zabbix-release_5.0-1+$(lsb_release -sc)_all.deb
 apt update
 apt install -y install zabbix-agent
-if [[ ! -e /home/2cloud_scripts ]]; then
-  mkdir /home/2cloud_scripts
-  chown zabbix:zabbix -R /home/2cloud_scripts
-  chmod 744 -R /home/2cloud_scripts
-fi
-cd /home/2cloud_scripts
-wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/sessions.sh
-chmod 744 *
-chown zabbix:zabbix *
 cd /etc/zabbix/zabbix_agentd.d
-if [[ ! -f 2cloud.conf ]]; then
-  wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/2cloud.conf
-  wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/os.conf -O os.conf
-fi
+wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/2cloud.conf
+wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/os.conf -O os.conf
 read -p "Tecle enter se o servidor for zabbix.2cloud.com.br, ou insira o IP/FQDN do proxy: `echo $'\n> '`" choice
 if [[ -z $choice ]]; then
   server="zabbix.2cloud.com.br"
