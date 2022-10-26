@@ -3,7 +3,7 @@ cd /tmp
 wget --no-check-certificate https://repo.zabbix.com/zabbix/5.0/debian/pool/main/z/zabbix-release/zabbix-release_5.0-1+buster_all.deb
 dpkg -i zabbix-release_5.0-1+buster_all.deb
 apt update
-apt install -y install zabbix-agent
+apt install -y zabbix-agent
 cd /etc/zabbix/zabbix_agentd.d
 wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/2cloud.conf
 wget --no-check-certificate https://raw.githubusercontent.com/2cloudtecnologia/arquivos_publicos/main/os.conf -O os.conf
